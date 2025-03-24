@@ -1,0 +1,25 @@
+{
+  "_comment": "指定拓展使用Manifest V3", 
+  "manifest_version": 3,
+
+  "name": "Copy Text Capturer",
+  "version": "1.0",
+  "_comment": "指定拓展需要的权限,'storage'用于存储数据,'activeTab'用于获取当前标签页信息",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "_comment": "当用户点击扩展图标时会打开一个弹出窗口，窗口的内容由 popup.html 文件定义",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "_comment": "内容脚本会注入到所有网页中",
+      "matches": ["<all_urls>"],
+      "_comment": "content.js 文件会在所有网页上运行",
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "_comment": "使用 background.js 作为后台脚本,在 Manifest V3 中，后台脚本以 Service Worker 的形式运行，用于处理扩展的后台逻辑",
+    "service_worker": "background.js"
+  }
+}
