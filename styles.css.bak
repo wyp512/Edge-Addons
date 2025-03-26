@@ -1,0 +1,20 @@
+/**
+ * styles.css 备份文件
+ * 备份时间：2025-3-26
+.dictionary-entry {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+}

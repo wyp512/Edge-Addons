@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- 备份文件：popup.html 的副本 -->
+<!-- 最后修改时间：2025-3-25 -->
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>词条展示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dictionary-entry">
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
