@@ -1,14 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>词条展示</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>翻译结果</title>
+    <style>
+        body {
+            width: 300px;
+            height: 400px;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            height: calc(100% - 30px);
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .content-box {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        .text-section {
+            margin-bottom: 15px;
+        }
+        .text-section h4 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .text-content {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 10px;
+            min-height: 60px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .loading {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .error {
+            color: #e74c3c;
+        }
+    </style>
 </head>
 <body>
-    <div class="dictionary-entry">
+    <div class="container">
+        <div class="header">翻译助手</div>
+        
+        <div class="content-box">
+            <div class="text-section">
+                <h4>已复制内容：</h4>
+                <div id="original-text" class="text-content loading">等待检测复制内容...</div>
+            </div>
+            
+            <div class="text-section">
+                <h4>翻译结果：</h4>
+                <div id="translation-result" class="text-content loading">准备翻译中...</div>
+            </div>
+        </div>
     </div>
+
     <script src="popup.js"></script>
 </body>
 </html>
