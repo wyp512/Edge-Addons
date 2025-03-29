@@ -30,3 +30,26 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       });
     }
   });
+
+  // 调用 DeepSeek API进行翻译
+  try {
+    const apiKey = "sk-ba61bfb87c7245768a7ad1980bb3192d"; 
+    const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: "deepseek-chat",
+            messages: [
+                {"role": "system", "content": "你是一个翻译助手，将用户输入的文本翻译成中文"},
+                {"role": "user", "content": copiedText}
+            ],
+            stream: false
+        })
+    });
+
+    const result = await response.json();
+    const translatedText = result.choices[0].message.content;
+  }
