@@ -1,23 +1,54 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-
-.dictionary-entry {
-    background-color: #qqq
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #666;
-    font-size: 16px;
-}
+:root {
+    --primary-bg: #f4f4f4;
+    --card-bg: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --spacing: 20px;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary-bg);
+    padding: var(--spacing);
+    line-height: 1.6;
+    color: var(--text-primary);
+  }
+  
+  .dictionary-entry {
+    background-color: var(--card-bg);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .dictionary-entry:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  h1 {
+    color: var(--text-primary);
+    font-size: 1.5rem; /* 24px */
+    margin: 0 0 0.625rem; /* 0 0 10px */
+    font-weight: 600;
+  }
+  
+  p {
+    color: var(--text-secondary);
+    font-size: 1rem; /* 16px */
+    margin: 0 0 0.5rem; /* 0 0 8px */
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    
+    .dictionary-entry {
+      padding: 15px;
+    }
+  }
